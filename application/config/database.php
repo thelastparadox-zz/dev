@@ -80,9 +80,9 @@ else
 	$active_group = 'development';
 }
 
-echo '<div>Environment: '.ENVIRONMENT.'</div>';
-echo '<div>Active Group: '.$active_group.'</div>';
-echo '<div>Server Host: '.$_SERVER['HTTP_HOST'].'</div>'; exit;
+//echo '<div>Environment: '.ENVIRONMENT.'</div>';
+//echo '<div>Active Group: '.$active_group.'</div>';
+//echo '<div>Server Host: '.$_SERVER['HTTP_HOST'].'</div>'; exit;
 
 $query_builder = TRUE;
 
