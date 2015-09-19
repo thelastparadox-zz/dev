@@ -21,7 +21,7 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$data = array (
-			'date' => date("Y-m-d"),
+			'date' => date("Y-m-d G:i:s"),
 			'payload' => json_encode($_POST),
 		);
 
