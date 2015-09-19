@@ -106,7 +106,7 @@ $db['development'] = array(
 
 $db['production'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '127.4.61.2',
 	'username' => 'adminupHr6cE',
 	'password' => '1qfcNfH_L-8J',
 	'database' => 'ci',
