@@ -20,7 +20,6 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
-		echo 'here'; exit;
 		$this->load->model('houseprices/houseprices_model');
 
 		//echo '<pre>'; print_r($house_prices); echo '</pre>'; exit;
@@ -42,7 +41,7 @@ class Main extends CI_Controller {
 			'number_of_data_points' => $this->houseprices_model->get_number_of_data_points(),
 			'length_of_measurement' => $length_of_measurement,
 		);
-
+		echo 'here'; exit;
 		$this->load->view('houseprices/overview', $data);
 	}
 
