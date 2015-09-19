@@ -20,7 +20,7 @@ class Cron extends CI_Controller {
 	 */
 	public function index()
 	{
-		
+		$this->check_house_price();
 	}
 
 	function check_house_price()
