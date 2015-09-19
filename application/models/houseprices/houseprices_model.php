@@ -10,14 +10,14 @@ class Houseprices_model extends CI_Model {
         // Added to ensure re-scan
     }
 
-    function get_prices()
+    public function get_prices()
     {
 		$query = $this->db->query('SELECT * FROM `houseprices` GROUP BY `date` ORDER BY `date` DESC');
 
     	return $query->result_array();
     }
 
-    function get_latest_price()
+   public function get_latest_price()
     {
     	$query = $this->db->query('SELECT * FROM `houseprices` GROUP BY `date` ORDER BY `date` DESC LIMIT 1');
 
@@ -26,7 +26,7 @@ class Houseprices_model extends CI_Model {
     	return $return_array[0];
     }
 
-    function get_highest_price()
+    public function get_highest_price()
     {
     	$query = $this->db->query('SELECT * FROM `houseprices` ORDER BY `price` DESC LIMIT 1');
 
@@ -35,7 +35,7 @@ class Houseprices_model extends CI_Model {
     	return $return_array[0];
     }
 
-    function get_lowest_price()
+    public function get_lowest_price()
     {
     	$query = $this->db->query('SELECT * FROM `houseprices` ORDER BY `price` ASC LIMIT 1');
 
@@ -44,12 +44,12 @@ class Houseprices_model extends CI_Model {
     	return $return_array[0];
     }
 
-    function get_number_of_data_points()
+    public function get_number_of_data_points()
     {
     	return $this->db->count_all('houseprices');
     }
 
-    function get_first_price()
+    public function get_first_price()
     {
     	$query = $this->db->query('SELECT * FROM `houseprices` GROUP BY `date` ORDER BY `date` ASC LIMIT 1');
 
@@ -58,3 +58,5 @@ class Houseprices_model extends CI_Model {
     	return $return_array[0];
     }
 }
+
+?>
