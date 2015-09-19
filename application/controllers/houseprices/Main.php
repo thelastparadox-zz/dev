@@ -20,6 +20,7 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
+
 		$this->load->model('houseprices/houseprices_model');
 
 		$house_prices = $this->houseprices_model->get_prices();

@@ -55,6 +55,11 @@
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
+	if (strpos($_SERVER['HTTP_HOST'], "localhost") === false)
+	{
+		define('ENVIRONMENT', 'production');
+	}
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
