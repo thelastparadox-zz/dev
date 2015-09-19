@@ -20,7 +20,7 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
-
+		echo 'here'; exit;
 		$this->load->model('houseprices/houseprices_model');
 
 		//echo '<pre>'; print_r($house_prices); echo '</pre>'; exit;
