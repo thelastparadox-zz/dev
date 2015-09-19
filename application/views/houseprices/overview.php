@@ -12,16 +12,16 @@
     <title>House Price Monitoring Tool</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="assets/houseprices/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/houseprices/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="assets/houseprices/css/sb-admin.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/houseprices/css/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="assets/houseprices/css/plugins/morris.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/houseprices/css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="assets/houseprices/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>assets/houseprices/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -331,15 +331,15 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="assets/houseprices/js/jquery.js"></script>
+    <script src="<?=base_url()?>assets/houseprices/js/jquery.js"></script>
     <script src="http://www.flotcharts.org/flot/jquery.flot.js"></script> 
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="assets/houseprices/js/bootstrap.min.js"></script>
+    <script src="<?=base_url()?>assets/houseprices/js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="assets/houseprices/js/plugins/morris/raphael.min.js"></script>
-    <script src="assets/houseprices/js/plugins/morris/morris.min.js"></script>
+    <script src="<?=base_url()?>assets/houseprices/js/plugins/morris/raphael.min.js"></script>
+    <script src="<?=base_url()?>assets/houseprices/js/plugins/morris/morris.min.js"></script>
     <script src="<?=site_url('houseprices/main/main_chart_data')?>"></script>
 
 </body>

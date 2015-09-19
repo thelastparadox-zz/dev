@@ -11,7 +11,7 @@
 
     <title>Matt's PHP Develpoment Environment</title>
     <!-- Custom Fonts -->
-    <link href="assets/houseprices/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>assets/houseprices/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -79,7 +79,7 @@
         <div class="col-md-4">
           <h2><i class="fa fa-home"></i> Property Price Tool</h2>
           <p>A tool designed for monitoring the Zoopla property price of a particular address and displaying on a dashboard with a graph.</p>
-          <p><a class="btn btn-default" href="/houseprices" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="<?=site_url('houseprices')?>" role="button">View details &raquo;</a></p>
         </div>
       </div>
 
