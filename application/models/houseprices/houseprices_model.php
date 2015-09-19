@@ -7,6 +7,7 @@ class Houseprices_model extends CI_Model {
     {
         // Call the CI_Model constructor
         parent::__construct();
+        // Added to ensure re-scan
     }
 
     function get_prices()
