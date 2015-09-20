@@ -20,16 +20,15 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data = array (
-			'date' => date("Y-m-d G:i:s"),
-			'deviceName' => $this->input->post('deviceName'),
-			'attribute' => $this->input->post('attribute'),
-			'state' => $this->input->post('state'),
-			'payload' => json_encode($_POST),
-		);
+		$data = array();
 
-		$this->db->insert('smartthings', $data);
+		$this->load->view('smartthings/overview', $data);
+	}
 
-		echo "successful";	
+	public function livelog()
+	{
+		$data = array();
+
+		$this->load->view('smartthings/livelog', $data);		
 	}
 }
