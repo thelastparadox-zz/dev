@@ -5,16 +5,16 @@
 // ---* START Live logs Page --- //
 <?php if ($this->uri->segment(3) == "livelog") { ?>
 
-var refreshInterval = 1000;
+var refreshInterval = 3000;
 
-function doAjax(lastTimeChecked) {
+function doAjax(lastTimeDataReceived) {
 	console.log( "Smartthings App: Initiating Ajax call to grab livelog data" );
     
     $.ajax({
         type: 'POST',
         url: '<?=site_url('smartthings/api/livelog')?>',
         data: {
-        	time: lastTimeChecked
+        	time: lastTimeDataReceived
         },
         dataType: 'json',
         success: function (data) {
@@ -25,21 +25,23 @@ function doAjax(lastTimeChecked) {
 
             if (data.responseJSON == undefined) 
             {
+	           var newTimestamp = lastTimeDataReceived;
 	           console.log( "Smartthings App: No data returned" );
 	        }
 	        else
 	        {
+	        	// Since we have data, set the new last time data received to minimise the error time
+	        	var tnow = new Date();
+				var newTimestamp = Math.round(tnow.getTime() / 1000);
+
 	        	data.responseJSON.forEach(function(node)
 	        	{
-	        		$("<tr><td>"+node['date']+"</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>").prependTo("#livelogTable > tbody");
+	        		$("<tr><td>"+node['date']+"</td><td>"+node['deviceName']+"</td><td>"+node['attribute']+"</td><td>"+node['state']+"</td></tr>").prependTo("#livelogTable > tbody");
 	        	});
 	        	console.log( "Smartthings App: Ajax call complete. Data Returned - ["+JSON.stringify(data)+"]" );
 	        }
-            // Schedule the next
-
-            var tnow = new Date();
-			var nowTimestamp = Math.round(tnow.getTime() / 1000);		
-            setTimeout(doAjax(nowTimestamp), refreshInterval);
+            // Schedule the next		
+            setTimeout(doAjax(newTimestamp), refreshInterval);
         }
     });
 }

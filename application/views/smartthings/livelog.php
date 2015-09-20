@@ -195,9 +195,9 @@
                                         <thead>
                                             <tr>
                                                 <th>Date</th>
-                                                <th>Price</th>
-                                                <th>Source</th>
-                                                <th>Actions</th>
+                                                <th>Device Name</th>
+                                                <th>Attribute</th>
+                                                <th>State</th>
                                             </tr>
                                         </thead>
                                         <tbody>
