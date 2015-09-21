@@ -64,8 +64,8 @@ class Api extends CI_Controller {
 
 			$data = array (
 				'registration_date' => date("Y-m-d G:i:s"),
-				'deviceName' => $this->input->post('deviceName'),
-				'device_name' => $this->input->post('deviceID'),
+				'device_name' => $this->input->post('deviceName'),
+				'device_id' => $this->input->post('deviceID'),
 				'capabilities' => $this->input->post('capabilities'),
 			);
 
