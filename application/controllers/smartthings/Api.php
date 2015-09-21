@@ -20,6 +20,11 @@ class Api extends CI_Controller {
 	 */
 	public function index()
 	{
+		// Check if Device exists in DB and if not, create it
+		$this->load->model('smartthings/smartthings_model');
+
+		$this->input->post('deviceID')
+
 		$data = array (
 			'date' => date("Y-m-d G:i:s"),
 			'deviceName' => $this->input->post('deviceName'),
@@ -49,5 +54,21 @@ class Api extends CI_Controller {
 			echo json_encode($data);
 			//exit;
 		}
+	}
+
+	public function register_devices()
+	{
+		$this->load->model('smartthings/smartthings_model');
+
+		$data = array (
+			'registration_date' => date("Y-m-d G:i:s"),
+			'deviceName' => $this->input->post('deviceName'),
+			'deviceID' => $this->input->post('deviceID'),
+			'capabilities' => $this->input->post('capabilities'),
+		);
+
+		$this->db->insert('smartthings_devices', $data);
+
+		echo "successful";
 	}
 }

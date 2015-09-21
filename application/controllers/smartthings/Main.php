@@ -25,10 +25,29 @@ class Main extends CI_Controller {
 		$this->load->view('smartthings/overview', $data);
 	}
 
+	public function temperature_control()
+	{
+		$data = array();
+
+		$this->load->view('smartthings/temperature_control', $data);
+	}
+
 	public function livelog()
 	{
 		$data = array();
 
 		$this->load->view('smartthings/livelog', $data);		
+	}
+
+	public function room_assignments()
+	{
+		$this->load->model('smartthings/smartthings_model');
+
+		$data = array(
+			'rooms' => $this->smartthings_model->get_rooms(),
+			'devices' => $this->smartthings_model->get_devices(),
+		);
+
+		$this->load->view('smartthings/settings_roomassignments', $data);
 	}
 }

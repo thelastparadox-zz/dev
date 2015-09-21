@@ -133,51 +133,79 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Livelog <small> Overview</small>
+                            Settings <small> Room Assignments</small>
                         </h1>
-                        
                     </div>
                 </div>
-                <!-- /.row -->
-
-                <div class="row">                    
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Log History</h3>
+                <!-- Rooms Panel -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Rooms</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Room ID</th>
+                                            <th>Room Name</th>
+                                            <th># of Devices</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($rooms as $no => $room) { ?>
+                                        <tr id="<?=str_replace(" ", "", $room['room_name'])?>">
+                                            <td><?=$room['room_id']?></td>
+                                            <td><?=$room['room_name']?></td>
+                                            <td>&nbsp;</td>
+                                            <td><a id="deleteRoom" data-roomname="<?=$room['room_name']?>" href="#"><i class="fa fa-trash-o fa-fw"></i></a></td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table id="livelogTable" class="table table-bordered table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Date</th>
-                                                <th>Device Name</th>
-                                                <th>Attribute</th>
-                                                <th>State</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            
-                                              <tr>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                              </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
+                            <div class="text-right">
+                                <a href="#" id="addNewRoom">Add new room <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-
+                <!-- /.Rooms Panel -->
+                <!-- Devices Panel -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Devices</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Device Name</th>
+                                            <th>Data Points</th>
+                                            <th>Room Assignment</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($devices as $no => $device) { ?>
+                                        <tr id="<?=str_replace(" ", "", $device['deviceName'])?>">
+                                            <td><?=$device['deviceName']?></td>
+                                            <td><?=$device['count(`deviceName`)']?></td>
+                                            <td>&nbsp;</td>
+                                            <td><a class="deleteDevice" data-devicename="<?=$device['deviceName']?>" href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a class="editDevice" data-devicename="<?=$device['deviceName']?>" href="#"><i class="fa fa-pencil-square-o fa-fw"></i></a></td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.Rooms Panel -->
             </div>
             <!-- /.container-fluid -->
 
@@ -186,12 +214,7 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <script src="http://www.flotcharts.org/flot/jquery.flot.js"></script> 
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?=base_url()?>assets/houseprices/js/bootstrap.min.js"></script>
-
+    <div id="dialog"></div>
 </body>
 
 </html>
