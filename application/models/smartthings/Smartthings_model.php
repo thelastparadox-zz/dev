@@ -10,18 +10,17 @@ class Smartthings_model extends CI_Model
         parent::__construct();
     }
 
-    public function check_if_device_exists($deviceID, $deviceName)
+    public function check_if_device_exists($deviceID)
     {
         $query = $this->db->query("SELECT * FROM `smartthings_devices` WHERE `device_id` ='".$deviceID."'");
 
-        if ($query->num_rows() == 0)
+        if ($query->num_rows() > 0)
         {
-            $data = array(
-               'device_id' => $roomName,
-               'device_name' => $deviceName,
-            );
-
-        $this->db->insert('smartthings_rooms', $data);  
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

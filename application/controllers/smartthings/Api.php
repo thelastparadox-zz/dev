@@ -20,9 +20,6 @@ class Api extends CI_Controller {
 	 */
 	public function index()
 	{
-		// Check if Device exists in DB and if not, create it
-		$this->load->model('smartthings/smartthings_model');
-
 		//$this->input->post('deviceID');
 
 		$data = array (
@@ -60,18 +57,23 @@ class Api extends CI_Controller {
 	{
 		if ($this->input->post('deviceID'))
 		{
-			$this->load->model('smartthings/smartthings_model');
+			$this->load->model('smartthings/smartthings_model');			
 
-			$data = array (
-				'registration_date' => date("Y-m-d G:i:s"),
-				'device_name' => $this->input->post('deviceName'),
-				'device_id' => $this->input->post('deviceID'),
-				'capabilities' => $this->input->post('capabilities'),
-			);
+			// Check if Device exists in DB and if not, create it
 
-			$this->db->insert('smartthings_devices', $data);
+			if (!$this->smartthings_model->check_if_device_exists($this->input->post('deviceID')))
+			{
+				$data = array (
+					'registration_date' => date("Y-m-d G:i:s"),
+					'device_name' => $this->input->post('deviceName'),
+					'device_id' => $this->input->post('deviceID'),
+					'capabilities' => $this->input->post('capabilities'),
+				);
 
-			echo "successful";
+				$this->db->insert('smartthings_devices', $data);
+
+				echo "successful";
+			}
 		}
 	}
 }
