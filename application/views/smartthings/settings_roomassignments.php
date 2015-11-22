@@ -184,19 +184,17 @@
                                 <table class="table table-bordered table-hover table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Device Name</th>
-                                            <th>Data Points</th>
+                                            <th>Device Name</th>                                          
                                             <th>Room Assignment</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($devices as $no => $device) { ?>
-                                        <tr id="<?=str_replace(" ", "", $device['deviceName'])?>">
-                                            <td><?=$device['deviceName']?></td>
-                                            <td><?=$device['count(`deviceName`)']?></td>
+                                        <tr id="<?=str_replace(" ", "", $device['device_name'])?>">
+                                            <td><?=$device['device_name']?></td>
                                             <td>&nbsp;</td>
-                                            <td><a class="deleteDevice" data-devicename="<?=$device['deviceName']?>" href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a class="editDevice" data-devicename="<?=$device['deviceName']?>" href="#"><i class="fa fa-pencil-square-o fa-fw"></i></a></td>
+                                            <td><a class="deleteDevice" data-devicename="<?=$device['device_name']?>" href="#"><i class="fa fa-trash-o fa-fw"></i></a> <a class="editDevice" data-devicename="<?=$device['device_name']?>" href="#"><i class="fa fa-pencil-square-o fa-fw"></i></a></td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>

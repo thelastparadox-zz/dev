@@ -40,7 +40,7 @@ class Smartthings_model extends CI_Model
 
     public function get_devices()
     {
-        $query = $this->db->query("SELECT *, count(`deviceName`) FROM `smartthings` GROUP BY `deviceName`");
+        $query = $this->db->query("SELECT * FROM `smartthings_devices`");
 
         //echo '<pre>'; print_r($query->result_array()); echo '</pre>'; exit; 
         return $query->result_array();       
