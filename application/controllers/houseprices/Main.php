@@ -40,6 +40,8 @@ class Main extends CI_Controller {
 
 		$profit_made = (($latest_price['price'] - 455000) / 3) - 30000;
 
+		$projected_profit = ($profit_made / ((mktime() - mktime(0,0,0,11,1,2014)) / 86400)) * (365 * 3);
+
 		$data = array(
 			'house_prices' => $this->houseprices_model->get_prices(),
 			'highest_price' => $this->houseprices_model->get_highest_price(),
