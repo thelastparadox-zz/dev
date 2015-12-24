@@ -209,7 +209,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">&pound;<?=number_format($profit_made)?></div>
-                                        <div>Profit Made</div>
+                                        <div>Profit Made since purchase</div>
                                     </div>
                                 </div>
                             </div>
@@ -252,8 +252,8 @@
                                         <i class="fa fa-database fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge"><?=$number_of_data_points?></div>
-                                        <div>Price Data Points</div>
+                                        <div class="huge"><?=number_format($roi)?>%</div>
+                                        <div>Return on Investment</div>
                                     </div>
                                 </div>
                             </div>

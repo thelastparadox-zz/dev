@@ -42,6 +42,10 @@ class Main extends CI_Controller {
 
 		$projected_profit = ($profit_made / ((time() - mktime(0,0,0,11,1,2014)) / 86400)) * (365 * 3);
 
+		$original_investment = 30000;
+
+		$roi = ((($projected_profit/3) - $original_investment) / $original_investment) * 100;
+
 		//$projected_profit = ((time() - mktime(0,0,0,11,1,2014)) / 86400);
 
 		$data = array(
@@ -53,6 +57,7 @@ class Main extends CI_Controller {
 			'length_of_measurement' => $length_of_measurement,
 			'profit_made' => $profit_made,
 			'projected_profit' => $projected_profit,
+			'roi' => $roi,
 		);
 
 		$this->load->view('houseprices/overview', $data);
