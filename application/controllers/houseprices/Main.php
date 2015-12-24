@@ -38,6 +38,8 @@ class Main extends CI_Controller {
 
 		$length_of_measurement = round($diff / (60*60*24*30));
 
+		$profit_made = $latest_price - 455000;
+
 		$data = array(
 			'house_prices' => $this->houseprices_model->get_prices(),
 			'highest_price' => $this->houseprices_model->get_highest_price(),
@@ -45,7 +47,7 @@ class Main extends CI_Controller {
 			'latest_price' => $latest_price,
 			'number_of_data_points' => $this->houseprices_model->get_number_of_data_points(),
 			'length_of_measurement' => $length_of_measurement,
-			'profit_made' => ($latest_price - 455000),
+			'profit_made' => $profit_made
 		);
 
 		$this->load->view('houseprices/overview', $data);
