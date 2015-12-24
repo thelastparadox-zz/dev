@@ -45,6 +45,7 @@ class Main extends CI_Controller {
 			'latest_price' => $latest_price,
 			'number_of_data_points' => $this->houseprices_model->get_number_of_data_points(),
 			'length_of_measurement' => $length_of_measurement,
+			'profit_made' => $latest_price - 455000;
 		);
 
 		$this->load->view('houseprices/overview', $data);

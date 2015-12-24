@@ -230,8 +230,8 @@
                                         <i class="fa fa-calendar fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge"><?=$length_of_measurement?> months</div>
-                                        <div>Length of time monitored</div>
+                                        <div class="huge">&pound;<?=$profit_made?></div>
+                                        <div>Profit Made</div>
                                     </div>
                                 </div>
                             </div>
