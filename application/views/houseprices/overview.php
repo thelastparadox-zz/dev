@@ -208,7 +208,7 @@
                                         <i class="fa fa-money fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">&pound;<?=number_format($profit_made)?>></div>
+                                        <div class="huge">&pound;<?=number_format($profit_made)?></div>
                                         <div>Profit Made</div>
                                     </div>
                                 </div>
@@ -230,7 +230,7 @@
                                         <i class="fa fa-calendar fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge"></div>
+                                        <div class="huge">&pound;<?=number_format($projected_profit)?></div>
                                         <div>Projected 3 year Profit</div>
                                     </div>
                                 </div>
