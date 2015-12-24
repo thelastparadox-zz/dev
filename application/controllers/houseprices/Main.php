@@ -38,7 +38,7 @@ class Main extends CI_Controller {
 
 		$length_of_measurement = round($diff / (60*60*24*30));
 
-		$profit_made = $latest_price - 455000;
+		$profit_made = $latest_price['price'] - 455000;
 
 		$data = array(
 			'house_prices' => $this->houseprices_model->get_prices(),
