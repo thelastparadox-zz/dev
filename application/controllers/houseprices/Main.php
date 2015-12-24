@@ -40,7 +40,9 @@ class Main extends CI_Controller {
 
 		$profit_made = ($latest_price['price'] - 455000);
 
-		$projected_profit = ($profit_made / ((mktime() - mktime(0,0,0,11,1,2014)) / 86400)) * (365 * 3);
+		$projected_profit = ($profit_made / ((time() - mktime(0,0,0,11,1,2014)) / 86400)) * (365 * 3);
+
+		//$projected_profit = ((time() - mktime(0,0,0,11,1,2014)) / 86400);
 
 		$data = array(
 			'house_prices' => $this->houseprices_model->get_prices(),
@@ -49,7 +51,8 @@ class Main extends CI_Controller {
 			'latest_price' => $latest_price,
 			'number_of_data_points' => $this->houseprices_model->get_number_of_data_points(),
 			'length_of_measurement' => $length_of_measurement,
-			'profit_made' => $profit_made
+			'profit_made' => $profit_made,
+			'projected_profit' => $projected_profit,
 		);
 
 		$this->load->view('houseprices/overview', $data);
