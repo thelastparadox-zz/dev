@@ -38,7 +38,7 @@ class Main extends CI_Controller {
 
 		$length_of_measurement = round($diff / (60*60*24*30));
 
-		$profit_made = (($latest_price['price'] - 455000) / 3) - 30000;
+		$profit_made = ($latest_price['price'] - 455000);
 
 		$projected_profit = ($profit_made / ((mktime() - mktime(0,0,0,11,1,2014)) / 86400)) * (365 * 3);
 
